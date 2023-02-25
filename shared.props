@@ -1,0 +1,26 @@
+<Project>
+    <PropertyGroup>
+	    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+	    <Version>0.1.0</Version>
+		<RootNamespace>OpenMedStack.Linq2Fhir</RootNamespace>
+		<Authors>Jacob Reimers</Authors>
+		<Company>OpenMedStack</Company>
+	    <Product>OpenMedStack Spark Engine</Product>
+		<Copyright>Copyright © OpenMedStack 2014-2022</Copyright>
+		<Description>Generates FHIR queries from LINQ queries and parses the queries to FHIR serverside.</Description>
+	    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+		<DocumentationFile>bin\$(Configuration)\linq2fhir.xml</DocumentationFile>
+		<PackageProjectUrl>https://github.com/openmedstack/linq2fhir</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/openmedstack/linq2fhir</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>linq rest</PackageTags>
+        <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <WarningsAsErrors />
+        <WarningsNotAsErrors>618;1701</WarningsNotAsErrors>
+		<langVersion>latest</langVersion>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+</Project>

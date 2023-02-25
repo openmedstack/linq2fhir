@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="../../shared.props" />
+
+	<ItemGroup>
+	  <Compile Include="..\openmedstack.linq2fhir.R5\*.cs">
+		  <Link>%(RecursiveDir)%(Filename)%(Extension)</Link>
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Compile>
+	  <Compile Include="..\openmedstack.linq2fhir.R5\Parser\*.cs">
+		  <Link>Parser\%(Filename)%(Extension)</Link>
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Compile>
+	  <Compile Include="..\openmedstack.linq2fhir.R5\Provider\*.cs">
+		  <Link>Provider\%(Filename)%(Extension)</Link>
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Remove="obj\**" />
+	  <Content Remove="..\openmedstack.linq2fhir.R5\obj\**" />
+	  <EmbeddedResource Remove="obj\**" />
+	  <None Remove="obj\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Hl7.Fhir.R4" Version="5.0.0" />
+		<PackageReference Include="System.Linq.Async.Queryable" Version="6.0.1" />
+	</ItemGroup>
+</Project>
