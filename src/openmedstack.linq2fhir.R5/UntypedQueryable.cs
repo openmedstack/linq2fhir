@@ -24,7 +24,7 @@ internal class UntypedQueryable<T> : IQueryable<object>
 
     public UntypedQueryable(IQueryable<T> source, Expression<Func<T, object>> projection)
     {
-        _source = projection == null ? (IQueryable) source : source.Select(projection);
+        _source = source.Select(projection);
     }
 
     public Expression Expression => _source.Expression;

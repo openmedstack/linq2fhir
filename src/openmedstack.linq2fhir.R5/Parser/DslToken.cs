@@ -1,6 +1,6 @@
 ﻿namespace OpenMedStack.Linq2Fhir.Parser;
 
-internal class DslToken
+internal record DslToken
 {
     public DslToken(TokenType tokenType)
     {
@@ -14,11 +14,7 @@ internal class DslToken
         Value = value;
     }
 
-    public TokenType TokenType { get; set; }
-    public string Value { get; set; }
+    public TokenType TokenType { get; }
 
-    public DslToken Clone()
-    {
-        return new DslToken(TokenType, Value);
-    }
+    public string Value { get; }
 }

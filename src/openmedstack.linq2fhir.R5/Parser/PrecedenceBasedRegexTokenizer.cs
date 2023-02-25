@@ -5,11 +5,11 @@ using System.Linq;
 
 internal class PrecedenceBasedRegexTokenizer
 {
-    private readonly List<TokenDefinition> _tokenDefinitions;
+    private readonly TokenDefinition[] _tokenDefinitions;
 
     public PrecedenceBasedRegexTokenizer()
     {
-        _tokenDefinitions = new List<TokenDefinition>
+        _tokenDefinitions = new TokenDefinition[]
         {
                 new (TokenType.OpenParenthesis, "\\(", 1),
                 new (TokenType.CloseParenthesis, "\\)", 1),
@@ -46,7 +46,9 @@ internal class PrecedenceBasedRegexTokenizer
         {
             var bestMatch = group.OrderBy(x => x.Precedence).First();
             if (lastMatch != null && bestMatch.StartIndex < lastMatch.EndIndex)
+            {
                 continue;
+            }
 
             yield return new DslToken(bestMatch.TokenType, bestMatch.Value);
 

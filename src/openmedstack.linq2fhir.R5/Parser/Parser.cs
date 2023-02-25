@@ -12,7 +12,7 @@ internal class Parser
 {
     private static readonly Dictionary<string, PropertyInfo> PropertyInfos = new();
 
-    public Expression<Func<T, bool>> Parse<T>(IReadOnlyList<DslToken> tokens) where T: Resource
+    public static Expression<Func<T, bool>> Parse<T>(IReadOnlyList<DslToken> tokens) where T: Resource
     {
         var tokenSequence = LoadSequenceStack(tokens);
 
@@ -61,7 +61,8 @@ internal class Parser
         ParameterExpression parameter,
         DslToken first)
     {
-        var propertyName = first.Value.IndexOf(':') > 0 ? first.Value[..first.Value.IndexOf(':')] : first.Value;
+        var i = first.Value.IndexOf(':');
+        var propertyName = i > 0 ? first.Value[..i] : first.Value;
         lock (PropertyInfos)
         {
             var key = $"{typeof(T).AssemblyQualifiedName}-{propertyName}";

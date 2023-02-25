@@ -1,6 +1,6 @@
 ﻿namespace OpenMedStack.Linq2Fhir.Parser;
 
-internal class TokenMatch
+internal record TokenMatch
 {
     public TokenType TokenType { get; init; }
     public string Value { get; init; } = null!;

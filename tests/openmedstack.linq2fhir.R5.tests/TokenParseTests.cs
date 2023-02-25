@@ -23,9 +23,8 @@ public class TokenParseTests
     {
         var tokenizer = new PrecedenceBasedRegexTokenizer();
         var tokens = tokenizer.Tokenize(query).ToArray();
-        var parser = new Parser();
-
-        var expression = parser.Parse<TestType>(tokens);
+        
+        var expression = Parser.Parse<TestType>(tokens);
 
         Assert.Equal(expected, expression.ToString());
     }
