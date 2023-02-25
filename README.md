@@ -1,6 +1,12 @@
 # linq2fhir
 
+[![.NET](https://github.com/openmedstack/linq2fhir/actions/workflows/dotnet.yml/badge.svg)](https://github.com/openmedstack/linq2fhir/actions/workflows/dotnet.yml)
+
 LINQ provider for FHIR resources
+
+## Build
+
+Run the [build script](https://github.com/openmedstack/linq2fhir/blob/master/build.ps1).
 
 ## Packages
 
